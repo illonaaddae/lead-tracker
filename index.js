@@ -1,47 +1,62 @@
-let myLeads = []
-const inputEl = document.getElementById("input-el")
-const inputBtn = document.getElementById("input-btn")
-const ulEl = document.getElementById("ul-el")
-const deleteBtn = document.getElementById("delete-btn")
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
-const tabBtn = document.getElementById("tab-btn")
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  onValue,
+  remove,
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-database.js";
 
-if (leadsFromLocalStorage) {
-    myLeads = leadsFromLocalStorage
-    render(myLeads)
-}
+const firebaseConfig = {
+  databaseURL:
+    "https://leads-tracker-app-3cffb-default-rtdb.europe-west1.firebasedatabase.app/",
+};
 
-tabBtn.addEventListener("click", function(){    
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-        render(myLeads)
-    })
-})
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+console.log(app);
+const database = getDatabase(app);
+console.log(database);
+const referenceInDB = ref(database, "leads");
+// let myLeads = [];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
+const ulEl = document.getElementById("ul-el");
+const deleteBtn = document.getElementById("delete-btn");
 
 function render(leads) {
-    let listItems = ""
-    for (let i = 0; i < leads.length; i++) {
-        listItems += `
+  let listItems = "";
+  for (let i = 0; i < leads.length; i++) {
+    listItems += `
             <li>
                 <a target='_blank' href='${leads[i]}'>
                     ${leads[i]}
                 </a>
             </li>
-        `
-    }
-    ulEl.innerHTML = listItems
+        `;
+  }
+  ulEl.innerHTML = listItems;
 }
 
-deleteBtn.addEventListener("dblclick", function() {
-    localStorage.clear()
-    myLeads = []
-    render(myLeads)
-})
+onValue(referenceInDB, function (snapshot) {
+  if (snapshot.exists()) {
+    const snapshotValues = snapshot.val();
+    const leads = Object.values(snapshotValues);
+    render(leads);
+  } else {
+    console.log("No leads found in database");
+    ulEl.innerHTML = "";
+  }
+});
 
-inputBtn.addEventListener("click", function() {
-    myLeads.push(inputEl.value)
-    inputEl.value = ""
-    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
-    render(myLeads)
-})
+deleteBtn.addEventListener("dblclick", function () {
+  console.log("Delete button clicked");
+  // For now, just render empty array since we don't have delete functionality
+  remove(referenceInDB);
+  ulEl.innerHTML = "";
+});
+
+inputBtn.addEventListener("click", function () {
+  push(referenceInDB, inputEl.value);
+  inputEl.value = "";
+});
