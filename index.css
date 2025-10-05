@@ -1,43 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    min-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  max-width: 400px;
+  min-height: 100vh;
+}
+
+label {
+  color: #5f9341;
+  font-weight: 900;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #5f9341;
-    margin-bottom: 4px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #5f9341;
+  border-radius: 12px;
+  margin-bottom: 4px;
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input:focus {
+  outline: none;
+  border-color: #5f9341;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(95, 147, 65, 0.3);
 }
 
 button {
-    background: #5f9341;
-    color: white;
-    padding: 10px 20px;
-    border: 1px solid #5f9341;
-    font-weight: bold;
+  background: linear-gradient(135deg, #5f9341 0%, #7ba05b 100%);
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #5f9341;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(95, 147, 65, 0.4);
+  margin-right: 12px;
+  margin-bottom: 8px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #6ba047 0%, #85ab62 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(95, 147, 65, 0.5);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 #delete-btn {
-    background: white;
-    color: #5f9341;
+  background: rgb(255, 255, 255);
+  color: #5f9341;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+#delete-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 ul {
-    margin-top: 20px;
-    list-style: none;
-    padding-left: 0;
+  margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
 li {
-    margin-top: 5px;
+  margin-top: 5px;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(95, 147, 65, 0.2);
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a {
-    color: #5f9341;
+  color: #5f9341;
+  font-weight: 500;
+  display: block;
+  transition: color 0.3s ease;
 }
 
+a:hover {
+  color: #5f9341;
+  text-shadow: 0 1px 4px rgba(95, 147, 65, 0.3);
+}
 
+/* Loading animation for buttons */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+}
