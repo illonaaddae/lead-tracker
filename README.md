@@ -94,7 +94,8 @@ lead-tracker/
 
 ### Live Demo
 
-Visit the live application: [Lead Tracker Web App](<[#](https://leads-tracker-oc.netlify.app/)>)
+
+Visit the live application: [Lead Tracker Web App](https://leads-tracker-oc.netlify.app/)
 
 ### Local Development
 
