@@ -93,7 +93,8 @@ lead-tracker/
 ## 🔧 Installation & Setup
 
 ### Live Demo
-Visit the live application: [Lead Tracker Web App]([#](https://leads-tracker-oc.netlify.app/))
+
+Visit the live application: [Lead Tracker Web App](<[#](https://leads-tracker-oc.netlify.app/)>)
 
 ### Local Development
 
@@ -117,11 +118,12 @@ python -m http.server 8000
 
 ```javascript
 const firebaseConfig = {
-  databaseURL: "YOUR_FIREBASE_DATABASE_URL"
+  databaseURL: "YOUR_FIREBASE_DATABASE_URL",
 };
 ```
 
 4. Set database rules for public access (development only):
+
 ```json
 {
   "rules": {
@@ -198,13 +200,13 @@ This application demonstrates my understanding of:
 
 ## 🌐 Live Demo & Deployment
 
-- **Live Application**: [View Demo](https://leads-tracker-oc.netlify.app/) 
+- **Live Application**: [View Demo](https://leads-tracker-oc.netlify.app/)
 - **Source Code**: [GitHub Repository](https://github.com/illonaaddae/lead-tracker.git)
 - **Project Documentation**: This README
 
 ## 🔗 Connect With Me
 
-I'm passionate about frontend development and building meaningful web applications that solve real problems.
+I'm passionate about both frontend and fullstack development and building meaningful web applications that solve real problems.
 
 - **Portfolio**: [Portfolio Website](https://oceaniccodes.netlify.app/)
 - **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/illonaaddae)
