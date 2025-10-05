@@ -93,13 +93,13 @@ lead-tracker/
 ## 🔧 Installation & Setup
 
 ### Live Demo
-Visit the live application: [Lead Tracker Web App](#) *(Deploy to Netlify/Vercel)*
+Visit the live application: [Lead Tracker Web App]([#](https://leads-tracker-oc.netlify.app/))
 
 ### Local Development
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/lead-tracker.git
+git clone https://github.com/illonaaddae/lead-tracker.git
 cd lead-tracker
 
 # Serve locally (using any static server)
@@ -198,8 +198,8 @@ This application demonstrates my understanding of:
 
 ## 🌐 Live Demo & Deployment
 
-- **Live Application**: [View Demo](#) *(Deploy to Netlify/Vercel)*
-- **Source Code**: [GitHub Repository](https://github.com/yourusername/lead-tracker)
+- **Live Application**: [View Demo](https://leads-tracker-oc.netlify.app/) 
+- **Source Code**: [GitHub Repository](https://github.com/illonaaddae/lead-tracker.git)
 - **Project Documentation**: This README
 
 ## 🔗 Connect With Me
