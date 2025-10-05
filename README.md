@@ -1,26 +1,27 @@
-# 🎯 Lead Tracker - Chrome Extension
+# 🎯 Lead Tracker - Progressive Web App
 
 <div align="center">
 
-![Lead Tracker](https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-Web%20App-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-**A productivity-focused Chrome extension for efficient lead management and URL tracking**
+**A productivity-focused Progressive Web App for efficient lead management and URL tracking**
 
 </div>
 
 ## 🚀 Project Overview
 
-Lead Tracker is a Chrome extension I developed as part of my learning journey with Scrimba's Frontend Developer Career Path. This project demonstrates my ability to build practical, real-world applications using vanilla JavaScript and Chrome Extension APIs.
+Lead Tracker is a Progressive Web App I developed as part of my learning journey with Scrimba's Frontend Developer Career Path. Originally built as a Chrome extension, it has been transformed into a modern PWA that works across all browsers and devices. This project demonstrates my ability to build practical, real-world applications using vanilla JavaScript and modern web technologies.
 
 ### 🎯 What It Does
 
-- **Instant Lead Capture**: Save current browser tab URLs with one click
+- **Instant Lead Capture**: Save current page URL with one click
 - **Manual Lead Entry**: Add custom URLs and notes through an intuitive interface
 - **Persistent Storage**: All data is stored locally using browser LocalStorage
 - **Clean UI/UX**: Minimalist design focused on user productivity
+- **PWA Features**: Install as an app on any device, works offline
 
 ## 🛠️ Technical Skills Demonstrated
 
@@ -31,11 +32,12 @@ Lead Tracker is a Chrome extension I developed as part of my learning journey wi
 - **CSS3**: Responsive design, modern styling techniques
 - **Local Storage API**: Data persistence and retrieval
 
-### Chrome Extension Development
+### Progressive Web App Development
 
-- **Manifest V3**: Modern Chrome extension architecture
-- **Chrome APIs**: Tabs API for browser integration
-- **Extension Architecture**: Popup interface, background scripts
+- **Web Manifest**: PWA configuration for installability
+- **Service Worker Ready**: Architecture ready for offline support
+- **Responsive Design**: Works on all devices and screen sizes
+- **Modern Web APIs**: LocalStorage for data persistence
 - **User Experience**: Intuitive interface design for productivity tools
 
 ### Development Tools & Workflow
@@ -43,7 +45,7 @@ Lead Tracker is a Chrome extension I developed as part of my learning journey wi
 - **Vite**: Modern build tool for development and production
 - **Git**: Version control and project management
 - **Package Management**: NPM for dependency management
-- **Developer Tools**: Chrome DevTools for debugging and optimization
+- **Developer Tools**: Browser DevTools for debugging and optimization
 
 ## 🎨 Features
 
@@ -66,11 +68,16 @@ Lead Tracker is a Chrome extension I developed as part of my learning journey wi
 
 ```
 lead-tracker/
-├── manifest.json          # Extension configuration & permissions
-├── index.html             # Main popup interface
+├── site.webmanifest       # PWA manifest for installability
+├── index.html             # Main application interface
 ├── index.js               # Core application logic
 ├── index.css              # Styling and responsive design
-├── icon.png               # Extension icon asset
+├── icon.png               # Base icon asset
+├── favicon.ico            # Browser favicon
+├── favicon-16x16.png      # Small favicon
+├── favicon-32x32.png      # Medium favicon
+├── apple-touch-icon.png   # iOS home screen icon
+├── android-chrome-*.png   # Android app icons
 ├── vite.config.js         # Build tool configuration
 └── package.json           # Project dependencies & scripts
 ```
@@ -91,12 +98,18 @@ npm install
 npm run dev
 ```
 
-### Load as Chrome Extension
+### Access the Web App
 
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable "Developer mode" (top right toggle)
-3. Click "Load unpacked" and select the project folder
-4. The extension icon will appear in your Chrome toolbar
+1. Open your browser and navigate to `http://localhost:5173/`
+2. Start tracking your leads!
+3. For production, run `npm run build` to create a production-ready build in the `dist/` folder
+
+### Install as PWA
+
+1. Open the web app in a compatible browser (Chrome, Edge, Safari, etc.)
+2. Look for the "Install" icon in the address bar
+3. Click to install the app on your device
+4. Access it like any native application!
 
 ## 💡 Key Learning Outcomes
 
